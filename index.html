@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OneSystem — Operating System for Organizations</title>
+  <meta name="description" content="OneSystem: The intelligent operating system that unifies every department, process, and decision across your organization." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div class="app-layout">
+
+  <!-- ════════════ SIDEBAR ════════════ -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon">OS</div>
+      <div>
+        <h1>OneSystem</h1>
+        <div class="brand-tag">Enterprise OS</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-title">Core Modules</div>
+      <div class="nav-item active" data-screen="dashboard">
+        <span class="nav-icon">📊</span> Command Center
+      </div>
+      <div class="nav-item" data-screen="graph">
+        <span class="nav-icon">🧠</span> Org Graph
+      </div>
+      <div class="nav-item" data-screen="workflow">
+        <span class="nav-icon">⚙️</span> Workflow Engine
+      </div>
+
+      <div class="nav-section-title" style="margin-top:auto">System</div>
+      <div class="nav-item">
+        <span class="nav-icon">🔔</span> Notifications
+      </div>
+      <div class="nav-item">
+        <span class="nav-icon">⚡</span> Integrations
+      </div>
+      <div class="nav-item">
+        <span class="nav-icon">🛡️</span> Governance
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="user-info">
+        <div class="user-avatar">RA</div>
+        <div>
+          <div class="user-name">Rachel Adams</div>
+          <div class="user-role">Chief Operating Officer</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ════════════ MAIN AREA ════════════ -->
+  <div class="main-area">
+
+    <!-- ─── Top Bar ─── -->
+    <header class="topbar">
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input
+          id="global-search"
+          class="search-input"
+          type="text"
+          placeholder="Ask OneSystem anything… Try: &quot;Show impact of raising minimum server specifications&quot;"
+        />
+      </div>
+      <div class="topbar-actions">
+        <button class="topbar-btn" title="Notifications">🔔<span class="badge">2</span></button>
+        <button class="topbar-btn" title="Settings">⚙️</button>
+      </div>
+    </header>
+
+    <!-- ─── Content ─── -->
+    <main class="content-area">
+
+      <!-- ═══════════ SCREEN A: DASHBOARD ═══════════ -->
+      <section id="screen-dashboard" class="screen active">
+        <div class="screen-header">
+          <h2>🌐 Global Command Center</h2>
+          <p>Unified real-time view of organizational health, intelligence, and activity.</p>
+        </div>
+
+        <!-- KPI Ribbon -->
+        <div class="kpi-ribbon">
+          <div class="kpi-card emerald">
+            <div class="kpi-label">Overall Efficiency</div>
+            <div class="kpi-value" data-count="92" data-suffix="%">0%</div>
+            <div class="kpi-bar"><div class="kpi-bar-fill" data-target="92"></div></div>
+            <div class="kpi-sub">▲ 3% vs last quarter</div>
+          </div>
+          <div class="kpi-card amber">
+            <div class="kpi-label">Active Anomalies</div>
+            <div class="kpi-value" data-count="2" data-suffix="">0</div>
+            <div class="kpi-bar"><div class="kpi-bar-fill" data-target="20"></div></div>
+            <div class="kpi-sub">2 require attention</div>
+          </div>
+          <div class="kpi-card cyan">
+            <div class="kpi-label">Workflow Automation Rate</div>
+            <div class="kpi-value" data-count="78" data-suffix="%">0%</div>
+            <div class="kpi-bar"><div class="kpi-bar-fill" data-target="78"></div></div>
+            <div class="kpi-sub">▲ 12% since deployment</div>
+          </div>
+        </div>
+
+        <!-- Dashboard Grid -->
+        <div class="dashboard-grid">
+          <!-- AI Feed -->
+          <div class="widget">
+            <div class="widget-header">
+              <h3>🤖 System of Intelligence</h3>
+              <span class="widget-badge badge-violet">AI Feed</span>
+            </div>
+            <div class="widget-body">
+              <div id="ai-feed-list" class="ai-feed-list"></div>
+            </div>
+          </div>
+
+          <!-- Activity Stream -->
+          <div class="widget">
+            <div class="widget-header">
+              <h3>📡 Cross-Departmental Activity</h3>
+              <span class="widget-badge badge-cyan">Real-time</span>
+            </div>
+            <div class="widget-body">
+              <div id="activity-stream" class="activity-groups"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="charts-row">
+          <div class="widget">
+            <div class="widget-header">
+              <h3>💰 Department Budget Overview</h3>
+              <span class="widget-badge badge-emerald">FY2026</span>
+            </div>
+            <div class="widget-body">
+              <div class="chart-container">
+                <canvas id="chart-budget"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="widget">
+            <div class="widget-header">
+              <h3>📈 Weekly Efficiency Trend</h3>
+              <span class="widget-badge badge-emerald">This Week</span>
+            </div>
+            <div class="widget-body">
+              <div class="chart-container">
+                <canvas id="chart-efficiency"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════ SCREEN B: ORG GRAPH ═══════════ -->
+      <section id="screen-graph" class="screen">
+        <div class="screen-header">
+          <h2>🧠 Organizational Graph</h2>
+          <p>System of Memory — Visualize how disconnected silos are actually linked. Click any node to explore.</p>
+        </div>
+
+        <div class="graph-container">
+          <svg id="graph-canvas" class="graph-svg"></svg>
+          <div class="graph-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:#06B6D4"></div> Project</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#8B5CF6"></div> Department</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#F59E0B"></div> Finance</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#10B981"></div> Infrastructure</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#F43F5E"></div> Governance</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════ SCREEN C: WORKFLOW ENGINE ═══════════ -->
+      <section id="screen-workflow" class="screen">
+        <div class="screen-header">
+          <h2>⚙️ Unified Workflow Engine</h2>
+          <p>System of Control — Active organizational playbooks executing across departments.</p>
+        </div>
+
+        <div class="playbook-selector">
+          <div id="playbook-tabs"></div>
+          <button id="trigger-playbook-btn" class="trigger-playbook-btn">
+            ⚡ Trigger New Playbook
+          </button>
+        </div>
+
+        <div id="pb-info" class="playbook-info"></div>
+
+        <div id="pipeline" class="pipeline"></div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- ═══ Side Panel (Org Graph Details) ═══ -->
+<div id="panel-overlay" class="side-panel-overlay"></div>
+<div id="side-panel" class="side-panel">
+  <div class="side-panel-header">
+    <div>
+      <h3 id="panel-title"></h3>
+      <p id="panel-description"></p>
+    </div>
+    <button id="panel-close" class="side-panel-close">✕</button>
+  </div>
+  <div class="side-panel-body">
+    <div class="detail-section">
+      <h4>👥 People</h4>
+      <div id="panel-people"></div>
+    </div>
+    <div class="detail-section">
+      <h4>💰 Budget</h4>
+      <div id="panel-budget"></div>
+    </div>
+    <div class="detail-section">
+      <h4>📋 Policies</h4>
+      <div id="panel-policies"></div>
+    </div>
+    <div class="detail-section">
+      <h4>🖥️ Assets</h4>
+      <div id="panel-assets"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ Person Tooltip ═══ -->
+<div id="person-tooltip" class="person-tooltip">
+  <div class="tooltip-name"></div>
+  <div class="tooltip-role"></div>
+  <div class="tooltip-dept"></div>
+  <div class="tooltip-projects"></div>
+</div>
+
+<!-- ═══ Graph Tooltip ═══ -->
+<div id="graph-tooltip" class="graph-tooltip"></div>
+
+<!-- ═══ Search Loading Overlay ═══ -->
+<div id="search-loading" class="search-loading">
+  <div class="spinner"></div>
+  <p>Querying across IT, Finance, HR, and Governance systems…</p>
+</div>
+
+<!-- ═══ Impact Analysis Card (Aha! Moment) ═══ -->
+<div id="impact-overlay" class="impact-overlay">
+  <div class="impact-card">
+    <div class="impact-card-header">
+      <h3 id="impact-title"></h3>
+      <p id="impact-subtitle"></p>
+      <button id="impact-close" class="impact-close">✕</button>
+    </div>
+    <div id="impact-sections" class="impact-sections"></div>
+    <div class="impact-card-footer">
+      <button id="impact-dismiss" class="btn-secondary">Dismiss</button>
+      <button id="impact-action-btn" class="btn-primary"></button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ Trigger Playbook Modal ═══ -->
+<div id="playbook-modal" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>⚡ Trigger New Playbook</h3>
+      <button id="modal-close" class="side-panel-close">✕</button>
+    </div>
+    <div class="modal-body">
+      <label>Select Playbook Template</label>
+      <select id="playbook-select"></select>
+      <label>Trigger Reason (optional)</label>
+      <input type="text" placeholder="e.g. Emergency migration requested by CTO" />
+    </div>
+    <div class="modal-footer">
+      <button id="modal-cancel" class="btn-secondary">Cancel</button>
+      <button id="modal-trigger" class="btn-primary">🚀 Trigger Playbook</button>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
