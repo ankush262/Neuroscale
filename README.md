@@ -20,6 +20,7 @@ The CEO/Leadership dashboard providing a unified real-time view of the entire or
 - **Budget & Efficiency Charts** — Interactive bar and line charts with tooltips (powered by Chart.js)
 
 - <img width="1902" height="912" alt="image" src="https://github.com/user-attachments/assets/44d38d99-a970-4c5e-ac02-6247078191e5" />
+<img width="1912" height="897" alt="image" src="https://github.com/user-attachments/assets/ddd2ed49-66b8-447e-b0aa-41fa68c4f378" />
 
 
 ### 🧠 Screen B — Organizational Graph (System of Memory)
@@ -32,6 +33,8 @@ Visualizes how disconnected silos are actually linked.
   - 📋 **Policies** — Compliance rules attached to the entity
   - 🖥️ **Assets** — Servers, tools, or licenses being used
 - **Hover Tooltips** — Quick info on hover for every node and person
+<img width="1902" height="906" alt="image" src="https://github.com/user-attachments/assets/00eedbb8-26be-47ba-9f26-d98cc75195cc" />
+<img width="1916" height="895" alt="image" src="https://github.com/user-attachments/assets/ea0da8d6-b0c1-4741-861d-18db17e863fb" />
 
 ### ⚙️ Screen C — Unified Workflow Engine (System of Control)
 Demonstrates how actions are executed across the organization.
@@ -40,6 +43,7 @@ Demonstrates how actions are executed across the organization.
 - **Status-Coded Steps** — Completed (Green), In Progress (Yellow), Waiting (Gray), Pending (Gray)
 - **Multiple Playbooks** — Switch between "Emergency Server Migration" and "Quarterly Compliance Review"
 - **Trigger New Playbook** — Modal to initiate top-down actions from 8 pre-built templates
+<img width="1917" height="901" alt="image" src="https://github.com/user-attachments/assets/f32d8207-b262-4b02-aace-8945cc901926" />
 
 ### 🔍 "Aha!" Interaction — Cross-System Impact Analysis
 The killer feature that proves the value of OneSystem:
@@ -158,4 +162,5 @@ Neuroscale/
    Press **Enter** and watch the cross-system impact analysis appear.
 
 ---
+
 
